@@ -1,6 +1,16 @@
 from forex_python.converter import CurrencyRates
 c = CurrencyRates()
+from forex_python.converter import CurrencyCodes
+n = CurrencyCodes()
+from pprint import pprint
+import pandas
+print("Welcome to Floyd and Jeremy's money converter!"'''
+''')
+print('==============================================''''
+''')
 currency1 = input('What would you like to convert? ')
 currency2 = input('What would you like to convert it to? ')
-y = c.convert(currency1, currency2, 1)
-print(y)
+if currency2 = AUD, USD, JPY, CAD, CHF, NZD, EUR, GBP, SEK, DKK, NOK, SGD, CZK, HKD, MXN, PLN, RUB, TRY, ZAR, CNH
+currency3 = int(input('How much would you like to convert'))
+print(c.convert(currency1, currency2, currency3),n.get_symbol(currency2))
+
