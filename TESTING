@@ -1,40 +1,57 @@
-#import statements
+#All the import codes are here to import stuff like API's 
 import sys
 from forex_python.converter import CurrencyRates
 c = CurrencyRates()
 from forex_python.converter import CurrencyCodes
 n = CurrencyCodes()
+#The print codes are to print a message, nothing else
 print("Welcome to Floyd and Jeremy's money converter!"'''
 ''')
 print('==============================================''''
 ''')
+#input for the the first decision 
 option1 = int(input("If you would like to convert an amount of money to another currency please enter the number 1 "'''
 If you would like to the conversion rates for all the currencies please enter the number 2 ''' + '''
 '''))
+#if options to change the path of the code from the early input
 if option1 is 2: 
   base_rate = input('Please choose a base currency for the conversion rates')
+  #c.get_rates take the base rate you input earlier and get the rate from our live API 
   print(c.get_rates(base_rate))
+  #sys.exit exits the program
   sys.exit('')
 if option1 is 1:
+#pass is to skip the next to step and return to the original path
   pass
+#else is everything that isn't one or two will be invalid input 
 else:
   print('Invalid Input')
   sys.exit('EXITING PROGRAM...')
-  
+
 currency1 = input('What currency would you like to convert? ')
+#len is to check if the input is the correct format for a currency
 if len(currency1) !=3:
+  #if the currency isn't the correct format, the program will exit
   print('Sorry this is not a valid number. EXITING PROGRAM...')
   sys.exit('')
 currency2 = input('What currency would you like to convert it to? ')
 if len(currency2) !=3:
   print('Sorry this is not a valid number. EXITING PROGRAM...')
   sys.exit('')
-currency3 = int(input('How money much would you like to convert'))
-if currency3 < 0:
-  print('Sorry this is not a valid number. EXITING PROGRAM...')
-  sys.exit('')
+def currency3():
+  while True:
+    try:
+       number1 = float(input('How money much would you like to convert'))
+    except ValueError:
+        print('please enter a valid amount')
+        continue
+    else:
+       return number1
+       break
+#this changes the currency if input as a lower case to an uppercase
 currency5 = currency2.upper()
 currency4 = currency1.upper()
+#this will print the currency symbol and the new converted currency
 print(n.get_symbol(currency5),c.convert(currency4, currency5, currency3))
 
 
