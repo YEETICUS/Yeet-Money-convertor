@@ -18,16 +18,12 @@ while True:
         '''))
         break
     except ValueError:
-        sys.stdout.write('Invalid Input EXITING PROGRAM...')
+        sys.exit('Invalid Input EXITING PROGRAM...')
 
 #If for user error
 if option1 is 2: 
   base_rate = input('Please choose a base currency for the conversion rates')
-if len(base_rate) == 3:
   print(c.get_rates(base_rate))
-if len(base_rate) !=3:
-  sys.exit('Invalid input. EXITING PROGRAM...')
-  sys.exit('')
 if option1 is 1:
   pass
 
