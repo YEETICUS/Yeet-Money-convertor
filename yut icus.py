@@ -1,5 +1,7 @@
 #import statements
 import sys
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
 from forex_python.converter import CurrencyRates
 c = CurrencyRates()
 from forex_python.converter import CurrencyCodes
@@ -18,20 +20,18 @@ while True:
         '''))
         break
     except ValueError:
-        sys.exit('Invalid Input EXITING PROGRAM...')
+        print("")
+        sys.stdout.write('Please Enter 1 or 2')
+        print ('''
+        ''')
 
 #If for user error
 if option1 is 2: 
   base_rate = input('Please choose a base currency for the conversion rates')
-  print(c.get_rates(base_rate))
+  pp.pprint(c.get_rates(base_rate))
+  sys.exit('')
 if option1 is 1:
   pass
-
-#If input is invalid exit program
-else:
-  print('Invalid Input')
-  sys.exit('EXITING PROGRAM...')
-  
 #input statements 
 currency1 = input('What currency would you like to convert? ')
 
