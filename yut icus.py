@@ -1,11 +1,14 @@
 #import statements
 import sys
+import warnings
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 from forex_python.converter import CurrencyRates
 c = CurrencyRates()
 from forex_python.converter import CurrencyCodes
 n = CurrencyCodes()
+class QuietError(Exception):
+    pass
 #The opening menu
 print("Welcome to Floyd and Jeremy's money converter!"'''
 ''')
@@ -33,22 +36,38 @@ if option1 is 2:
 if option1 is 1:
   pass
 #input statements 
-currency1 = input('What currency would you like to convert? ')
-
-#If the input is not in the format of a currency exit program
-if len(currency1) !=3:
-  print('Sorry this is not a valid number. EXITING PROGRAM...')
-  sys.exit('')
-currency2 = input('What currency would you like to convert it to? ')
-if len(currency2) !=3:
-  print('Sorry this is not a valid number. EXITING PROGRAM...')
-  sys.exit('')
-currency3 = int(input('How money much would you like to convert'))
-if currency3 < 0:
-  print('Sorry this is not a valid number. EXITING PROGRAM...')
-  sys.exit('')
-
-
+while True:
+    try:
+        currency1 = input('What currency would you like to convert? ')
+        break
+    except ValueError:
+        print('')
+        sys.stdout.write('Please Enter a valid input')
+        print('''
+        ''')
+while True:
+    try:
+        currency2 = input('What currency would you like to convert it to? ')
+        break
+    except ValueError:
+        print('')
+        sys.stdout.write('Please Enter a valid input')
+        print('''
+        ''')
+while True:
+    try:
+        currency3 = int(input('How money much would you like to convert'))
+        break
+    except Exception:
+        print('')
+        sys.stdout.write('Please Enter a valid input')
+        print('''
+        ''')
+    except ValueError:
+        print('')
+        sys.stdout.write('Please Enter a valid input')
+        print('''
+        ''')
 #changes currency to uppercase
 currency5 = currency2.upper()
 currency4 = currency1.upper()
