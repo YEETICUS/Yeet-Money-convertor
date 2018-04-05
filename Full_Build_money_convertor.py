@@ -1,6 +1,5 @@
 #import statements
 import sys
-import warnings
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 from forex_python.converter import CurrencyRates
@@ -39,33 +38,12 @@ if option1 is 1:
 while True:
     try:
         currency1 = input('What currency would you like to convert? ')
-        break
-    except ValueError:
-        print('')
-        sys.stdout.write('Please Enter a valid input')
-        print('''
-        ''')
-while True:
-    try:
         currency2 = input('What currency would you like to convert it to? ')
-        break
-    except ValueError:
-        print('')
-        sys.stdout.write('Please Enter a valid input')
-        print('''
-        ''')
-while True:
-    try:
         currency3 = int(input('How money much would you like to convert'))
         break
-    except Exception:
-        print('')
-        sys.stdout.write('Please Enter a valid input')
-        print('''
-        ''')
     except ValueError:
         print('')
-        sys.stdout.write('Please Enter a valid input')
+        sys.stdout.write('Please Enter a valid input. Please do not use decimals')
         print('''
         ''')
 #changes currency to uppercase
